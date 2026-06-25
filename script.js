@@ -9,7 +9,7 @@ function searchNews() {
     fetch(
 url, {
     headers: {
-        "X-Api-Key": "YOUR_API_KEY"
+        "X-Api-Key": "2ab4265ded714f54aea25f8e21e54d65"
     }
 }
 )
