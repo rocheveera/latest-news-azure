@@ -6,7 +6,13 @@ function searchNews() {
 
     const url = `https://newsapi.org/v2/everything?q=${key}+news&language=en&sortBy=publishedAt&apiKey=${API_KEY}`;
 
-    fetch(url)
+    fetch(
+url, {
+    headers: {
+        "X-Api-Key": "YOUR_API_KEY"
+    }
+}
+)
         .then(response => response.json())
         .then(data => {
 
