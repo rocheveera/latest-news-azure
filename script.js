@@ -4,30 +4,20 @@ function searchNews() {
 
     const API_KEY = "2ab4265ded714f54aea25f8e21e54d65";
 
-    const url = `https://newsapi.org/v2/everything?q=${key}+news&language=en&sortBy=publishedAt&apiKey=${API_KEY}`;
+    const url = `https://latest-news-api-cvhrc9g8b8fwfeh4.centralindia-01.azurewebsites.net/api/getNews?q=${key}`;
+    
+fetch(url)
+.then(res => res.json())
+.then(data => {
 
-    fetch(
-url, {
-    headers: {
-        "X-Api-Key": "2ab4265ded714f54aea25f8e21e54d65"
-    }
-}
-)
-        .then(response => response.json())
-        .then(data => {
+    const container = document.getElementById("newsContainer");
+    container.innerHTML = "";
 
-            const container = document.getElementById("newsContainer");
-            container.innerHTML = "";
+    data.articles.forEach(article => {
 
-            if (!data.articles || data.articles.length === 0) {
-                container.innerHTML = "<p>No news found</p>";
-                return;
-            }
+        const div = document.createElement("div");
+        div.className = "card";
 
-            data.articles.forEach(article => {
-
-                const div = document.createElement("div");
-                div.className = "card";
 
                 
 div.innerHTML = `
