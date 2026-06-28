@@ -1,9 +1,6 @@
 function searchNews() {
 
     const key = document.getElementById("search").value || "technology";
-
-    const API_KEY = "2ab4265ded714f54aea25f8e21e54d65";
-
     const url = `https://latest-news-api-cvhrc9g8b8fwfeh4.centralindia-01.azurewebsites.net/api/getNews?q=${key}`;
     
 fetch(url)
